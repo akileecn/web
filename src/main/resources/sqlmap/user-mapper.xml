@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.aki.dao.UserMapper">
+	<resultMap type="cn.aki.entity.User" id="UserResultMap">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="password" property="password" jdbcType="VARCHAR"/>
+	</resultMap>
+	<sql id="columnList">
+		id,name,password
+	</sql>
+	<select id="getList" resultMap="UserResultMap" parameterType="cn.aki.entity.User">
+		select
+		<include refid="columnList"/>
+		from user
+	</select>
+</mapper>

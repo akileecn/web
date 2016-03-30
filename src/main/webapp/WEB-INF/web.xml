@@ -22,19 +22,17 @@
 	</filter-mapping>
 	<!-- spring容器初始化 -->
 	<listener>
-		<description>spring listener</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<!-- springmvc -->
 	<servlet>
-		<description>spring mvc servlet</description>
 		<servlet-name>springmvc</servlet-name>
+		<description>spring mvc servlet</description>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-			<init-param>
-				<description>springmvc config</description>
-				<param-name>contextConfigLocation</param-name>
-				<param-value>classpath:spring-mvc.xml</param-value>
-			</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-mvc.xml</param-value>
+		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>

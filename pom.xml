@@ -9,6 +9,8 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<spring.verson>4.2.5.RELEASE</spring.verson>
+		<mybatis.verson>3.3.1</mybatis.verson>
+		<mybatis-spring.verson>1.2.4</mybatis-spring.verson>
 	</properties>
 	<dependencies>
 		<!-- 单元测试 -->
@@ -41,6 +43,11 @@
 		    <artifactId>spring-webmvc</artifactId>
 		    <version>${spring.verson}</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${spring.verson}</version>
+		</dependency>
 		<!-- org.springframework.http.converter.json.MappingJackson2HttpMessageConverter依赖 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -63,6 +70,30 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
+		</dependency>
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.verson}</version>
+		</dependency>
+		<!-- mybatis spring插件 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis-spring.verson}</version>
+		</dependency>
+		<!-- jdbc数据源 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.18</version>
+		</dependency>
+		<!-- jdbc -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.38</version>
 		</dependency>
 	</dependencies>
 	<build>
