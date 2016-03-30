@@ -1,12 +1,12 @@
 package cn.aki.controller;
 
-import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.github.pagehelper.Page;
 
 import cn.aki.entity.User;
 import cn.aki.service.UserService;
@@ -29,9 +29,9 @@ public class UserController {
 	@RequestMapping("/list")
 	public String list(Model model){
 		logger.info("list");
-		model.addAttribute("user", "aki");
-		List<User> list=userService.getList(null);
-		System.err.println(list.size());
+		Page<User> page=userService.getPage(1, 4, null);
+		model.addAttribute("page", page);
+		model.addAttribute("total",page.getTotal());
 		return "userList";
 	}
 }
