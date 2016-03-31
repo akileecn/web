@@ -1,6 +1,5 @@
 package cn.aki.controller;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +18,6 @@ import cn.aki.service.UserService;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-	private static Logger logger=Logger.getLogger(UserController.class);
 	@Autowired
 	private UserService userService;
 	/**
@@ -28,7 +26,6 @@ public class UserController {
 	 */
 	@RequestMapping("/list")
 	public String list(Model model){
-		logger.info("list");
 		Page<User> page=userService.getPage(1, 4, null);
 		model.addAttribute("page", page);
 		model.addAttribute("total",page.getTotal());

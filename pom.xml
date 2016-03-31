@@ -11,6 +11,7 @@
 		<spring.verson>4.2.5.RELEASE</spring.verson>
 		<mybatis.verson>3.3.1</mybatis.verson>
 		<mybatis-spring.verson>1.2.4</mybatis-spring.verson>
+		<shiro.verson>1.2.4</shiro.verson>
 	</properties>
 	<dependencies>
 		<!-- 单元测试 -->
@@ -100,6 +101,17 @@
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper</artifactId>
 			<version>4.1.1</version>
+		</dependency>
+		<!-- shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${shiro.verson}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro.verson}</version>
 		</dependency>
 	</dependencies>
 	<build>

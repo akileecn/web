@@ -12,4 +12,5 @@
 	<context:component-scan base-package="cn.aki.service"/>
 	<!-- 导入其他配置文件 -->
 	<import resource="spring-mybatis.xml"/>
+	<import resource="spring-shiro.xml"/>
 </beans>

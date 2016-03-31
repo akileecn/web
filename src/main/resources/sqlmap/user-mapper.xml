@@ -3,11 +3,11 @@
 <mapper namespace="cn.aki.dao.UserMapper">
 	<resultMap type="cn.aki.entity.User" id="UserResultMap">
 		<id column="id" property="id" jdbcType="INTEGER"/>
-		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="username" property="username" jdbcType="VARCHAR"/>
 		<result column="password" property="password" jdbcType="VARCHAR"/>
 	</resultMap>
 	<sql id="columnList">
-		id,name,password
+		id,username,password
 	</sql>
 	<select id="getList" resultMap="UserResultMap" parameterType="cn.aki.entity.User">
 		select
