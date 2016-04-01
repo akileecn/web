@@ -2,15 +2,17 @@ package cn.aki.entity;
 
 import java.io.Serializable;
 import java.util.Set;
-
-import javax.management.relation.Role;
-
+/**
+ * 用户
+ * @author aki
+ * 2016年4月1日 上午9:25:56
+ */
 public class User implements Serializable{
 	private static final long serialVersionUID = 4316328239249215538L;
 	private Integer id;
 	private String username;
 	private String password;
-	private Set<Role> roleSet;
+	private Set<Role> roles;//角色集合
 	
 	public Integer getId() {
 		return id;
@@ -30,11 +32,11 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Set<Role> getRoleSet() {
-		return roleSet;
+	public Set<Role> getRoles() {
+		return roles;
 	}
-	public void setRoleSet(Set<Role> roleSet) {
-		this.roleSet = roleSet;
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 	
 }

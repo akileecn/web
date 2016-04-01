@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>主页</title>
 </head>
 <body>
-	登录页面
+	主页
 </body>
 </html>
