@@ -7,6 +7,6 @@
 <title>主页</title>
 </head>
 <body>
-	主页
+	主页<a href='<c:url value="/user/login"/>'>登录</a><a href='<c:url value="/user/register"/>'>注册</a>
 </body>
 </html>
