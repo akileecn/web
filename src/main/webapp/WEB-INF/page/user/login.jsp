@@ -17,11 +17,51 @@
       <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+		body {
+			padding-top: 40px;
+			padding-bottom: 40px;
+			background-color: #eee;
+		}
+		.form-signin {
+			max-width: 330px;
+			padding: 15px;
+			margin: 0 auto;
+		}
+		.form-signin .form-signin-heading, .form-signin .checkbox {
+			margin-bottom: 10px;
+		}
+		.form-signin .checkbox {
+			font-weight: normal;
+		}
+		.form-signin .form-control {
+			position: relative;
+			height: auto;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 10px;
+			font-size: 16px;
+		}
+		.form-signin .form-control:focus {
+			z-index: 2;
+		}
+		.form-signin input[type="text"] {
+			margin-bottom: -1px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+		.form-signin input[type="password"] {
+			margin-bottom: 10px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+</style>
 </head>
 <body>
 	<div class="container">
 		<c:url var="loginUrl" value="/user/login" />
-		<form:form method="post" action="${loginUrl}" modelAttribute="userLoginForm" >
+		<form:form method="post" action="${loginUrl}" modelAttribute="userLoginForm" class="form-signin">
 			<h2>请登录</h2>
 			<label for="username" class="sr-only">用户名:</label>
 			<form:input path="username" placeholder="用户名" class="form-control" required="true" autofocus="true"/><form:errors path="username" />

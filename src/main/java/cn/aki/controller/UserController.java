@@ -10,6 +10,8 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,6 +36,7 @@ import cn.aki.service.UserService;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	private final Logger logger=LoggerFactory.getLogger(UserController.class);
 	@Autowired
 	private UserService userService;
 	
@@ -76,9 +79,11 @@ public class UserController {
 				return "redirect:/home";
 			}catch(IncorrectCredentialsException ex){
 				//验证失败
+				logger.info("{} 验证失败",userLoginForm.getUsername());
 				result.rejectValue(FIELD_USERNAME, null, "验证失败");
 			}catch(UnknownAccountException ex){
 				//其他异常
+				logger.info("{} 未知异常",userLoginForm.getUsername());
 				result.rejectValue(FIELD_USERNAME, null, "未知异常");
 			}
 		}

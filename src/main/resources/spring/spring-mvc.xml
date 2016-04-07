@@ -4,15 +4,19 @@
     xmlns:p="http://www.springframework.org/schema/p"
     xmlns:mvc="http://www.springframework.org/schema/mvc"
     xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context 
-		http://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<!-- 包扫描 -->
 	<context:component-scan base-package="cn.aki.controller"/>
-
+	<!-- aop(要拦截mvc的controller必须配置在一起) -->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
 	<!-- 静态资源 -->	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<!-- 注解驱动(有resources标签时必须配,另外不配会导致springValidation失效) -->
