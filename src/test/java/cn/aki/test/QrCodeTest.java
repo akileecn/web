@@ -30,7 +30,11 @@ import com.google.zxing.client.j2se.MatrixToImageConfig;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
-
+/**
+ * 二维码
+ * @author aki
+ * 2016年4月11日 上午10:27:56
+ */
 public class QrCodeTest {
 	/**
 	 * 生成二维码

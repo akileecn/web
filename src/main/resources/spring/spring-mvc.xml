@@ -20,28 +20,11 @@
 	<!-- 静态资源 -->	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<!-- 注解驱动(有resources标签时必须配,另外不配会导致springValidation失效) -->
+	<!-- 并相当于注册了RequestMappingHandlerMapping,RequestMappingHandlerAdapter,ExceptionHandlerExceptionResolver -->
 	<mvc:annotation-driven/>
 	<!-- 简单controller -->
 	<mvc:view-controller path="/home" view-name="home"/>
 	
-	<!-- json转换支持 -->
-	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-		<property name="supportedMediaTypes">
-			<list>
-				<value>text/html;charset=UTF-8</value>
-			</list>
-		</property>
-	</bean>
-
-	<!-- 请求注解映射 -->
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
-			<list>
-				<ref bean="mappingJacksonHttpMessageConverter" />
-			</list>
-		</property>
-	</bean>
-
 	<!-- jsp视图解析 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
 		  p:prefix="/WEB-INF/page/" p:suffix=".jsp" />

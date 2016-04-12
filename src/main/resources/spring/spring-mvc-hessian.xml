@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:component-scan base-package="cn.aki.hessian.exporter"/>
+	<!-- HandlerMapping映射类 -->
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	<!-- HandlerAdapter映射方法(HttpRequestHandlerAdapter的controller必须实现HttpRequestHandler接口) -->
+	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>
+	
+	<!-- exporter -->
+	<!-- 必须加"/"，作为url路径使用 -->
+	<bean id="/helloHessianService" class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="helloHessianService" />
+		<property name="serviceInterface" value="cn.aki.hessian.HelloHessianService" />
+	</bean>
+</beans>

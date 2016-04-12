@@ -113,6 +113,7 @@
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper</artifactId>
 			<version>4.1.1</version>
+			
 		</dependency>
 		<!-- shiro -->
 		<dependency>
@@ -136,11 +137,25 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.1.0.Final</version>
 		</dependency>
+		<!-- @Resource注解 -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
+	<!-- 以下依赖学习用 -->
 		<!-- 二维码 -->
 		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>javase</artifactId>
 			<version>3.2.1</version>
+		</dependency>
+		<!-- hessian -->
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>4.0.38</version>
 		</dependency>
 	</dependencies>
 	<build>
