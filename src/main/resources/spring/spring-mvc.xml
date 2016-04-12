@@ -25,9 +25,33 @@
 	<!-- 简单controller -->
 	<mvc:view-controller path="/home" view-name="home"/>
 	
-	<!-- jsp视图解析 -->
+	<!-- jsp视图解析
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
 		  p:prefix="/WEB-INF/page/" p:suffix=".jsp" />
+	 -->
+		  
+	<!--
+		freemarker配置
+		freemarkerSettings属性为java.util.Properties,freemarkerVariables属性为java.util.Map,其他属性直接配
+	-->
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="/WEB-INF/template/"/>
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="incompatible_improvements">2.3.24</prop>
+				<prop key="template_exception_handler">rethrow</prop>
+				<prop key="default_encoding">UTF-8</prop>
+				<prop key="auto_import">"/spring.ftl" as spring</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- freemarker视图解析 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	    <property name="cache" value="true"/>
+	    <property name="prefix" value=""/>
+	    <property name="suffix" value=".ftl"/>
+	</bean>
 		  
 	<!-- 上传 -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

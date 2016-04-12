@@ -160,6 +160,12 @@
 			<artifactId>quartz-jobs</artifactId>
 			<version>${quartz.verson}</version>
 		</dependency>
+		<!-- freemarker -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.24-incubating</version>
+		</dependency>
 	<!-- 以下依赖学习用,不一定在项目中能用上 -->
 		<!-- 二维码 -->
 		<dependency>
