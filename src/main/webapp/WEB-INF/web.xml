@@ -74,4 +74,8 @@
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	<!-- 错误页 -->
+	<error-page>
+		<location>/WEB-INF/page/error.jsp</location>
+	</error-page>
 </web-app>

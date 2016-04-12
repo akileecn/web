@@ -4,9 +4,9 @@
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>主页</title>
+	<title>错误页</title>
 	</head>
 <body>
-	主页<a href='<c:url value="/user/login"/>'>登录</a><a href='<c:url value="/user/register"/>'>注册</a>
+	服务器炸了<a href='<c:url value="/home"/>'>返回主页</a>
 </body>
 </html>
