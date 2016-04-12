@@ -41,7 +41,8 @@
 				<prop key="incompatible_improvements">2.3.24</prop>
 				<prop key="template_exception_handler">rethrow</prop>
 				<prop key="default_encoding">UTF-8</prop>
-				<prop key="auto_import">"/spring.ftl" as spring</prop>
+				<!-- spring宏 bootstrap自定义宏 -->
+				<prop key="auto_import">"/spring.ftl" as spring,"/base/bootstrap.ftl" as bootstrap</prop>
 			</props>
 		</property>
 	</bean>
