@@ -1,4 +1,5 @@
 <@bootstrap.head>
+<title>登录</title>
 <style type="text/css">
 	body {
 		padding-top: 40px;
