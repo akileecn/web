@@ -11,8 +11,8 @@
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 	    <property name="securityManager" ref="securityManager"/>
 	    <!-- override these for application-specific URLs if you like: -->
-	    <property name="loginUrl" value="/user/login.do"/>
-	    <property name="successUrl" value="/home.do"/>
+	    <property name="loginUrl" value="/user/login"/>
+	    <property name="successUrl" value="/home"/>
 	    <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
 	    <!-- The 'filters' property is not necessary since any declared javax.servlet.Filter bean  -->
 	    <!-- defined will be automatically acquired and available via its beanName in chain        -->
