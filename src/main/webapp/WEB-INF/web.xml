@@ -58,12 +58,23 @@
 		</init-param>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
-	
+	<!-- cxf(webService) -->
+	<servlet>
+		<description>Apache CXF Endpoint</description>
+		<display-name>cxf</display-name>
+		<servlet-name>cxf</servlet-name>
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>cxf</servlet-name>
+		<url-pattern>/cxf/*</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>hessian</servlet-name>
-		<url-pattern>/remote/*</url-pattern>
+		<url-pattern>/hessian/*</url-pattern>
 	</servlet-mapping>
-	
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>/</url-pattern>

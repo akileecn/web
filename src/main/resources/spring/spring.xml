@@ -15,8 +15,12 @@
 	<import resource="spring-mybatis.xml"/>
 	<!-- shiro权限 -->
 	<import resource="spring-shiro.xml"/>
-	<!-- hessian客户端 -->
+	<!-- hessian客户端(服务端配在mvc-hessian里) -->
 	<import resource="spring-hessian-client.xml"/>
 	<!-- quartz定时任务 -->
 	<import resource="spring-quartz.xml"/>
+	<!-- cxf服务端 -->
+	<import resource="spring-cxf-server.xml"/>
+	<!-- cxf客户端 -->
+	<import resource="spring-cxf-client.xml"/>
 </beans>

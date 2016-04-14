@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context.xsd">
-    <!-- bean扫描 -->
+    <!-- 任务类 -->
 	<context:component-scan base-package="cn.aki.job"/>
     <!-- scheduler -->
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false">
