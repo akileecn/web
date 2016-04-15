@@ -27,4 +27,8 @@
 		        #{item}
 		</foreach>
 	</select>
+	
+	<select id="getAllList" resultMap="dictDataResultMap" parameterType="list">
+		<include refid="baseSql"/>
+	</select>
 </mapper>

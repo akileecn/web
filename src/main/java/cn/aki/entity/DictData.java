@@ -9,6 +9,11 @@ import java.util.Date;
  */
 public class DictData implements Serializable{
 	private static final long serialVersionUID = -5581421912677787537L;
+	/**
+	 * 字典数据在servletContext中的属性key值
+	 */
+	public static final String CONTEXT_ATTR_KEY="dictMap";
+	
 	private Integer id;
 	private String typeCode;
 	private String code;

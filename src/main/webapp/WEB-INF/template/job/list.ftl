@@ -14,8 +14,8 @@
 		<#list list as job>
 		<tr>
 			<td>${job.name}</td>
-			<td>${job.workYear}</td>
-			<td>${job.workCity}</td>
+			<td>${dictMap['work_year'][job.workYear]}(${job.workYear})</td>
+			<td>${dictMap['work_city'][job.workCity]}(${job.workCity})</td>
 			<td>${job.requirement}</td>
 			<td>${job.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
 		</tr>
