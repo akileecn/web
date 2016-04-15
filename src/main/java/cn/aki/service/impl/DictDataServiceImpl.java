@@ -10,6 +10,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.ServletContextAware;
 
 import cn.aki.dao.DictDataMapper;
 import cn.aki.entity.DictData;
@@ -17,10 +18,10 @@ import cn.aki.service.DictDataService;
 
 @Lazy(false)
 @Service("dictDataService")
-public class DictDataServiceImpl implements DictDataService,InitializingBean{
+public class DictDataServiceImpl implements DictDataService,ServletContextAware,InitializingBean{
 	@Autowired
 	private DictDataMapper dictDataMapper;
-	@Autowired
+//	@Autowired
 	private ServletContext servletContext;
 	
 	private Map<String,Map<String,String>> dictMap; 
@@ -35,6 +36,10 @@ public class DictDataServiceImpl implements DictDataService,InitializingBean{
 		}else{
 			return null;
 		}
+	}
+	
+	public void setServletContext(ServletContext servletContext) {
+		this.servletContext=servletContext;
 	}
 	
 	public void afterPropertiesSet() throws Exception {
