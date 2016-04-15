@@ -10,7 +10,6 @@
 	<context:property-placeholder location="classpath:config.properties"/>
 	<!-- bean扫描 -->
 	<context:component-scan base-package="cn.aki.service.impl,cn.aki.other,cn.aki.aspect"/>
-	<!-- 导入其他配置文件 -->
 	<!-- mybaits数据库 -->
 	<import resource="spring-mybatis.xml"/>
 	<!-- shiro权限 -->
@@ -23,4 +22,6 @@
 	<import resource="spring-cxf-server.xml"/>
 	<!-- cxf客户端 -->
 	<import resource="spring-cxf-client.xml"/>
+	<!-- 其他 -->
+	<import resource="spring-others.xml"/>
 </beans>
