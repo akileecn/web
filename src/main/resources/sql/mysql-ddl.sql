@@ -39,3 +39,33 @@ create table role_permission(
 	,permission_id int not null
 	,primary key(role_id,permission_id)
 );
+-- 字典定义表
+create table dict_type(
+	id int primary key auto_increment
+	,code varchar(32) not null
+	,name varchar(32) not null
+	,remark varchar(100)
+);
+-- 字典数据表
+create table dict_data(
+	id int primary key auto_increment
+	,type_code varchar(32) not null
+	,code varchar(32) not null
+	,name varchar(100) not null
+	,remark varchar(100)
+	,disabled tinyint(1) default 0
+	,create_time timestamp
+	,modify_time timestamp
+);
+-- 岗位
+create table job(
+	id int primary key auto_increment
+	,name varchar(32)
+	,work_year varchar(32)
+	,work_city varchar(32)
+	,requirement varchar(500)
+	,description varchar(500)
+	,disabled tinyint(1) default 0
+	,create_time timestamp
+	,modify_time timestamp
+);
