@@ -1,6 +1,7 @@
 package cn.aki.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -24,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.github.pagehelper.Page;
 
+import cn.aki.entity.Role;
 import cn.aki.entity.User;
 import cn.aki.form.UserLoginForm;
 import cn.aki.service.UserService;
@@ -43,6 +45,13 @@ public class UserController {
 	@ModelAttribute("userLoginForm")
 	public UserLoginForm createUserLoginForm(){
 		return new UserLoginForm();
+	}
+	
+	@RequestMapping("/test")
+	public String test(User user, Model model){
+		List<Role> roles=user.getRoles();
+		System.err.println(roles.size());
+		return list(model);
 	}
 	/**
 	 * 用户列表
@@ -114,4 +123,5 @@ public class UserController {
 		}
 		return result;
 	}
+	
 }

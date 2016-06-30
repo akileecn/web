@@ -1,7 +1,7 @@
 package cn.aki.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 /**
  * 用户
  * @author aki
@@ -12,7 +12,7 @@ public class User implements Serializable{
 	private Integer id;
 	private String username;
 	private String password;
-	private Set<Role> roles;//角色集合
+	private List<Role> roles;//角色集合
 	
 	public Integer getId() {
 		return id;
@@ -32,10 +32,10 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Set<Role> getRoles() {
+	public List<Role> getRoles() {
 		return roles;
 	}
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 	
